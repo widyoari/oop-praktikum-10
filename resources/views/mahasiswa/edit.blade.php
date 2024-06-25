@@ -17,7 +17,7 @@
 			<td>JURUSAN</td>
 				<td>
 					<select name="mhsw_jurusan" id="mhsw_jurusan">
-						<option value="{{ $row->mhsw_jurusan }}">{{ $row->mhsw_jurusan }}</option>	-->			
+						<option value="{{ $row->mhsw_jurusan }}">{{ $row->mhsw_jurusan }}</option>		
 						@foreach($jurusan_rows as $rowj)
 						  <option value="{{ $rowj->nama_jurusan }}">{{ $rowj->nama_jurusan }}</option>
 						@endforeach
