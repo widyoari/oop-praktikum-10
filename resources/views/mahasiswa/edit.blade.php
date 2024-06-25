@@ -7,14 +7,22 @@
 	@csrf
 		<table>
 			<tr>
-				<td>NIM</td>
+				<td>NIM {{ $row->mhsw_id }}</td>
 				<td><input type="text" name="mhsw_nim" value="{{ $row->mhsw_nim }}"></td>
 			</tr>
 			<tr>
 				<td>NAMA</td><td><input type="text" name="mhsw_nama" value="{{ $row->mhsw_nama }}"></td>
 			</tr>
 			<tr>
-				<td>JURUSAN</td><td><input type="text" name="mhsw_jurusan" value="{{ $row->mhsw_jurusan }}"></td>
+			<td>JURUSAN</td>
+				<td>
+					<select name="mhsw_jurusan" id="mhsw_jurusan">
+						<option value="{{ $row->mhsw_jurusan }}">{{ $row->mhsw_jurusan }}</option>	-->			
+						@foreach($jurusan_rows as $rowj)
+						  <option value="{{ $rowj->nama_jurusan }}">{{ $rowj->nama_jurusan }}</option>
+						@endforeach
+					</select>
+				</td>
 			</tr>
 			<tr>
 				<td>ALAMAT</td><td><input type="text" name="mhsw_alamat" value="{{ $row->mhsw_alamat }}"></td>

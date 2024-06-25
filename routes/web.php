@@ -40,12 +40,13 @@ Route::get('/mahasiswa', [App\Http\Controllers\MahasiswaController::class, 'inde
 Route::get('/mahasiswa/create', [App\Http\Controllers\MahasiswaController::class, 'create']);
 Route::post('/mahasiswa', [App\Http\Controllers\MahasiswaController::class, 'store'])->name('mahasiswa');
 
-Route::get('mahasiswa/{id}/edit', [App\Http\Controllers\MahasiswaController::class, 'edit']);
+
 
 Route::get('mahasiswa/{id}/lihat', [App\Http\Controllers\MahasiswaController::class, 'lihat']);
 
 Route::get('mahasiswa/search', [App\Http\Controllers\MahasiswaController::class, 'search'])->name('search');
 
+Route::get('mahasiswa/{id}/edit', [App\Http\Controllers\MahasiswaController::class, 'edit']);
 Route::patch('mahasiswa/{id}', [App\Http\Controllers\MahasiswaController::class, 'update']);
 
 Route::delete('mahasiswa/{id}', [App\Http\Controllers\MahasiswaController::class, 'destroy'])->name('mahasiswa');

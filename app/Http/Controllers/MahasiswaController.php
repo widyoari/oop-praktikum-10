@@ -64,14 +64,15 @@ class MahasiswaController extends Controller
 
     public function edit($id)
     {
+		$jurusan_rows = Jurusan::all();
         $row = Mahasiswa::findOrFail($id);
-        return view('mahasiswa.edit', compact('row'));
+        return view('mahasiswa.edit', ['row' => $row,'jurusan_rows' =>$jurusan_rows]);
     }
 
     public function update(Request $request, $id)
     {
         $request->validate([
-        'mhsw_nim' => 'bail|required|unique:tb_mhsw',
+        'mhsw_nim' => 'bail|required',
         'mhsw_nama' => 'required'
         ],
         [
